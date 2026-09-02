@@ -491,7 +491,7 @@ main {
 .products-section {
   padding: clamp(4.5rem, 8vw, 8rem) clamp(1.25rem, 7vw, 8rem) clamp(5rem, 10vw, 9rem);
   background: var(--cream);
-  background-image: url('assets/productos/cafefondo.png');
+  background-image: url('assets/productos/cafefondo.webp');
   background-size: cover;
   background-position: center;
 }
@@ -752,7 +752,7 @@ main {
 .instagram-section {
   padding: clamp(4.5rem, 8vw, 8rem) clamp(1.25rem, 7vw, 8rem) clamp(5rem, 10vw, 9rem);
   background: var(--cream);
-  background-image: url('assets/instagram/fondos.png');
+  background-image: url('assets/instagram/fondos.webp');
   background-size: cover;
   background-position: center;
 }
