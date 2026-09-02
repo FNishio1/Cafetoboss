@@ -16,7 +16,7 @@
   <!-- ============ NAV / LOGO ============ -->
   <header class="site-nav" id="siteNav">
     <a class="brand-lockup" href="#inicio" aria-label="CafetoBoss, inicio">
-      <img src="assets/nav/logo.png" alt="Logotipo CafetoBoss">
+      <span class="brand-icon"><img src="assets/nav/logo.png" alt="Logotipo CafetoBoss"></span>
       <span><strong>CafetoBoss</strong><small>Dale una pausa a tu día</small></span>
     </a>
 
@@ -71,7 +71,6 @@
         <div class="hero-frame">
           <img src="assets/hero/hero-mesa.webp" alt="Mesa de CafetoBoss con café helado, laptop y el mural del logo de fondo">
         </div>
-        <div class="hero-note"><span>01</span><p>Cremas<br>para celebrar<br>el día.</p></div>
         <div class="hero-leaf">
           <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.15"><path d="M11 20A7 7 0 0 1 4 13c0-5 4-9 10-11 1 6-1 10-3 12"/><path d="M4 13c3 1 6 0 8-2"/></svg>
         </div>
@@ -103,49 +102,72 @@
       <div class="section-heading">
         <p class="eyebrow"><span></span> Para todos los antojos</p>
         <h2 id="products-title">Elige cómo quieres<br><em>disfrutar tu pausa.</em></h2>
-        <a class="desktop-text-link" href="https://www.instagram.com/cafetoboss_/" target="_blank" rel="noopener">Mira más en Instagram
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
-        </a>
       </div>
 
       <div class="product-grid">
-        <article class="product-card berry">
-          <div class="product-image-wrap">
-            <img src="assets/productos/cafesycomestibles.png" alt="Bebidas">
+        <article class="product-card espresso">
+          <div class="product-image-wrap" data-menu="cafes" role="button" tabindex="0" aria-label="Ver menú de cafés y bebidas calientes">
+            <img src="assets/productos/bebidascalientes.webp" alt="Cafés">
             <span class="product-number">01</span>
           </div>
           <div class="product-copy">
-            <h3>Cremas y sabores frutados</h3>
-            <p>Bebidas frías, toppings generosos y ese toque dulce que alegra cualquier parada.</p>
-            <a href="https://www.instagram.com/cafetoboss_/" target="_blank" rel="noopener">Ver el antojo
+            <h3>Cafés y bebidas calientes</h3>
+            <p>Espresso, cortados y lattes con toques de caramelo, chai o matcha para arrancar bien.</p>
+            <button class="menu-trigger" data-menu="cafes">Ver el antojo
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </a>
+            </button>
           </div>
         </article>
-        <article class="product-card caramel">
-          <div class="product-image-wrap">
-             <img src="assets/productos/cremebule.jpg" alt="Dulces">
+        <article class="product-card berry">
+          <div class="product-image-wrap" data-menu="smoothies" role="button" tabindex="0" aria-label="Ver menú de smoothies">
+            <img src="assets/productos/cafesycomestibles.webp" alt="Smoothies">
             <span class="product-number">02</span>
           </div>
           <div class="product-copy">
-            <h3>Dulces para quedarte un rato</h3>
-            <p>Strudel, crème brûlée y pequeños antojos dorados recién servidos.</p>
-            <a href="https://www.instagram.com/cafetoboss_/" target="_blank" rel="noopener">Ver el antojo
+            <h3>Smoothies</h3>
+            <p>Frutas frescas licuadas al toque, cremosas y sin nada artificial.</p>
+            <button class="menu-trigger" data-menu="smoothies">Ver el antojo
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </a>
+            </button>
           </div>
         </article>
-        <article class="product-card espresso">
-          <div class="product-image-wrap">
-             <img src="assets/productos/sanguches.jpg" alt="Sanguches">
+        <article class="product-card caramel">
+          <div class="product-image-wrap" data-menu="frappes" role="button" tabindex="0" aria-label="Ver menú de frappés">
+             <img src="assets/productos/frappes.webp" alt="Frappés">
             <span class="product-number">03</span>
+          </div>
+          <div class="product-copy">
+            <h3>Frappés</h3>
+            <p>Bebidas frías, toppings generosos y ese toque dulce que alegra cualquier parada.</p>
+            <button class="menu-trigger" data-menu="frappes">Ver el antojo
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </button>
+          </div>
+        </article>
+        <article class="product-card sage">
+          <div class="product-image-wrap" data-menu="sandwiches" role="button" tabindex="0" aria-label="Ver menú de sánguches">
+             <img src="assets/productos/sanguches.jpg" alt="Sánguches">
+            <span class="product-number">04</span>
           </div>
           <div class="product-copy">
             <h3>Sánguches que hacen plan</h3>
             <p>Una pausa salada, contundente y perfecta para acompañar tu café.</p>
-            <a href="https://www.instagram.com/cafetoboss_/" target="_blank" rel="noopener">Ver el antojo
+            <button class="menu-trigger" data-menu="sandwiches">Ver el antojo
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </a>
+            </button>
+          </div>
+        </article>
+        <article class="product-card orchid">
+          <div class="product-image-wrap" data-menu="postres" role="button" tabindex="0" aria-label="Ver menú de postres">
+             <img src="assets/productos/cremebule.jpg" alt="Postres">
+            <span class="product-number">05</span>
+          </div>
+          <div class="product-copy">
+            <h3>Postres</h3>
+            <p>Tartas, kekes y delicias para quedarte un rato más.</p>
+            <button class="menu-trigger" data-menu="postres">Ver el antojo
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </button>
           </div>
         </article>
       </div>
@@ -186,6 +208,7 @@
 
     <!-- ============ INSTAGRAM ============ -->
     <section class="instagram-section" aria-labelledby="instagram-title">
+      <div class="instagram-inner">
       <div class="instagram-copy">
         <p class="eyebrow"><span></span> Muy CafetoBoss</p>
         <h2 id="instagram-title">Detrás de cada vaso hay <em>un antojo esperando.</em></h2>
@@ -194,13 +217,11 @@
           Síguenos en Instagram</a>
       </div>
       <div class="instagram-photo-stack">
-        <div class="stack-img insta-back">
-         <img src="assets/instagram/meconoces.jpg" alt="bebidas cafetoboss" class="contain-photo"class="contain-photo">
-        </div>
         <div class="stack-img insta-front">
          <video src="assets/instagram/video.mp4" autoplay muted loop playsinline></video>
         </div>
         <span class="insta-handle">@cafetoboss_</span>
+      </div>
       </div>
     </section>
 
@@ -216,22 +237,22 @@
       <div class="locations-list">
         <article class="location-card">
           <span class="location-index">01</span>
-          <div><h3>CafetoBoss Jesús María</h3><p>Av. Mello Franco 171</p><small>Tu pausa entre vueltas.</small></div>
-          <a href="https://wa.me/51965793574" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp para Jesús María">
+          <div><h3>CafetoBoss Jesús María</h3><p>Av. Mello Franco 171 &middot; Telf. 751 8119 / 913 725 866</p><small>Tu pausa entre vueltas.</small></div>
+          <a href="https://www.google.com/maps/search/?api=1&query=Av.+Mello+Franco+171%2C+Jes%C3%BAs+Mar%C3%ADa%2C+Lima%2C+Per%C3%BA" target="_blank" rel="noopener" aria-label="Ver CafetoBoss Jesús María en Google Maps">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           </a>
         </article>
         <article class="location-card">
           <span class="location-index">02</span>
-          <div><h3>CafetoBoss Lince</h3><p>Av. Petit Thouars 1291</p><small>Café, postre y buen ritmo.</small></div>
-          <a href="https://wa.me/51965793574" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp para Lince">
+          <div><h3>CafetoBoss Lince</h3><p>Av. Petit Thouars 1291 &middot; Telf. 965 793 574</p><small>Café, postre y buen ritmo.</small></div>
+          <a href="https://www.google.com/maps/search/?api=1&query=Av.+Petit+Thouars+1291%2C+Lince%2C+Lima%2C+Per%C3%BA" target="_blank" rel="noopener" aria-label="Ver CafetoBoss Lince en Google Maps">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           </a>
         </article>
         <article class="location-card">
           <span class="location-index">03</span>
           <div><h3>CafetoBoss Cercado de Lima</h3><p>Av. Arenales 425</p><small>Escríbenos y te guiamos al más cercano.</small></div>
-          <a href="https://wa.me/51965793574" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp para Cercado de Lima">
+          <a href="https://www.google.com/maps/search/?api=1&query=Av.+Arenales+425%2C+Cercado+de+Lima%2C+Lima%2C+Per%C3%BA" target="_blank" rel="noopener" aria-label="Ver CafetoBoss Cercado de Lima en Google Maps">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           </a>
         </article>
@@ -266,6 +287,18 @@
     Encuentra un local</a>
 </div>
 
+<!-- ============ MODAL: MENU DE ANTOJOS ============ -->
+<div class="menu-modal-overlay" id="menuModalOverlay">
+  <div class="menu-modal" role="dialog" aria-modal="true" aria-labelledby="menuModalTitle">
+    <button class="menu-modal-close" id="menuModalClose" aria-label="Cerrar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <p class="menu-modal-eyebrow" id="menuModalEyebrow">Antojo</p>
+    <h3 class="menu-modal-title" id="menuModalTitle">Título</h3>
+    <ul class="menu-modal-list" id="menuModalList"></ul>
+  </div>
+</div>
+
 <!-- ============ JS: MENU MOVIL ============ -->
 <script>
   const nav = document.getElementById('siteNav');
@@ -284,6 +317,206 @@
 
   toggle.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
   mobileLinks.forEach(a => a.addEventListener('click', () => setMenu(false)));
+</script>
+
+<!-- ============ JS: MODAL DE MENU / ANTOJOS ============ -->
+<script>
+  const menuData = {
+    cafes: {
+      eyebrow: "Cafés y bebidas calientes",
+      title: "Nuestros cafés",
+      items: [
+        ["Americano", "S/ 7"],
+        ["Capuccino", "S/ 9"],
+        ["Espresso", "S/ 6"],
+        ["Cortado", "S/ 8"],
+        ["Macchiato", "S/ 8"],
+        ["Mocha Latte", "S/ 11"],
+        ["Caramel Latte", "S/ 11"],
+        ["Chai Latte", "S/ 11"],
+        ["Cúrcuma Latte", "S/ 12"],
+        ["Matcha Latte", "S/ 12"],
+        ["Chocolate Caliente", "S/ 10"]
+      ]
+    },
+    smoothies: {
+      eyebrow: "Smoothies",
+      title: "Nuestros smoothies",
+      items: [
+        ["Smoothie de Maracuyá", "S/ 13"],
+        ["Smoothie de Lúcuma", "S/ 13"],
+        ["Smoothie de Mango", "S/ 13"],
+        ["Smoothie de Mangolú", "S/ 14"],
+        ["Smoothie de Chocolúcuma", "S/ 14"],
+        ["Smoothie de Maracumango", "S/ 14"],
+        ["Smoothie de Vainilla", "S/ 12"],
+        ["Smoothie de Arándanos c/fresas", "S/ 15"]
+      ]
+    },
+    frappes: {
+      eyebrow: "Frappés",
+      title: "Nuestros frappés",
+      items: [
+        ["Capuccino Frappé", "S/ 14"],
+        ["Caramel Frappé", "S/ 15"],
+        ["Matcha Frappé", "S/ 16"],
+        ["Chai Frappé", "S/ 15"],
+        ["Mocha Frappé", "S/ 15"],
+        ["Oreo Frappé", "S/ 16"]
+      ]
+    },
+    sandwiches: {
+      eyebrow: "Sánguches",
+      title: "Nuestros sánguches",
+      items: [
+        ["Enrollado de Pollo", "S/ 12"],
+        ["Sandwich Mixto", "S/ 12"],
+        ["Sandwich de Pavo", "S/ 14"],
+        ["Chanchito Asado", "S/ 15"],
+        ["Asado de Tira", "S/ 16"],
+        ["Lomo", "S/ 17"],
+        ["Capresse", "S/ 13"],
+        ["Croissant", "S/ 10"]
+      ]
+    },
+    postres: {
+      eyebrow: "Postres",
+      title: "Nuestros postres",
+      items: [
+        ["Tarta de Queso", "S/ 12"],
+        ["Tarta de Chocolate", "S/ 12"],
+        ["Tarta de Manzana", "S/ 11"],
+        ["Keke de Zanahoria", "S/ 9"],
+        ["Delicia de Limón", "S/ 11"],
+        ["Delicia de Maracuyá", "S/ 11"],
+        ["Leche Asada", "S/ 9"],
+        ["Arroz con Leche", "S/ 8"],
+        ["Tiramisú", "S/ 13"],
+        ["Pastel de Acelga", "S/ 10"]
+      ]
+    }
+  };
+
+  const overlay = document.getElementById('menuModalOverlay');
+  const modalEyebrow = document.getElementById('menuModalEyebrow');
+  const modalTitle = document.getElementById('menuModalTitle');
+  const modalList = document.getElementById('menuModalList');
+  const modalClose = document.getElementById('menuModalClose');
+  let lastFocused = null;
+
+  function openMenuModal(key) {
+    const data = menuData[key];
+    if (!data) return;
+    modalEyebrow.textContent = data.eyebrow;
+    modalTitle.textContent = data.title;
+    modalList.innerHTML = data.items.map(([name, price]) =>
+      `<li><span>${name}</span><span class="menu-modal-price">${price}</span></li>`
+    ).join('');
+    lastFocused = document.activeElement;
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    modalClose.focus();
+  }
+
+  function closeMenuModal() {
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  document.querySelectorAll('[data-menu]').forEach(el => {
+    el.addEventListener('click', () => openMenuModal(el.dataset.menu));
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openMenuModal(el.dataset.menu);
+      }
+    });
+  });
+
+  modalClose.addEventListener('click', closeMenuModal);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeMenuModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeMenuModal();
+  });
+</script>
+
+<!-- ==========================================
+     CAFETOBOSS BOT
+     ========================================== -->
+
+<!-- Chat Button -->
+<button class="bot-toggle visible" id="bot-toggle" onclick="toggleChat()">
+  <span class="bot-toggle-icon">☕</span>
+  <span class="bot-toggle-text">Pregúntale a<br>Cafeto Bot</span>
+</button>
+
+<!-- ===== CHAT WIDGET / BOT ===== -->
+<div class="bot-widget" id="bot-widget">
+
+  <div class="bot-header">
+    <div class="bot-header-info">
+      <span class="bot-avatar">☕</span>
+      <div>
+        <strong>CafetoBoss Bot</strong>
+        <small>CafetoBoss · Lima, Perú</small>
+      </div>
+    </div>
+    <button class="bot-close" onclick="toggleChat()">×</button>
+  </div>
+
+  <div class="bot-messages" id="bot-messages"></div>
+
+  <div class="bot-input-area">
+    <input
+      id="bot-input"
+      type="text"
+      placeholder="Pregúntanos por nuestros antojos..."
+      onkeydown="if(event.key==='Enter') botSend()"
+    >
+    <button onclick="botSend()">→</button>
+  </div>
+
+</div>
+
+<script>
+  function toggleChat() {
+    document.getElementById('bot-widget').classList.toggle('open');
+  }
+
+  function addBotMessage(text, cls) {
+    const box = document.getElementById('bot-messages');
+    const div = document.createElement('div');
+    div.className = 'bot-msg ' + cls;
+    div.textContent = text;
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+  }
+
+  // Placeholder — reemplazar por la lógica/API real del bot
+  const cannedReplies = [
+    "¡Hola! Tenemos cafés, smoothies, frappés, sánguches y postres. ¿Qué antojo buscas hoy?",
+    "Puedes ver nuestra carta en nuestra seccion de antojos",
+    "Atendemos de Lunes a Domingo de 10 am a 8 pm",
+    "Puedes visitarnos en Lince (Av. Petit Thouars 1291), Jesús María (Av. Mello Franco 171) o el Centro de Lima (Av. Arenales 425).",
+    "Para pedidos, escríbenos por WhatsApp (751-8119 y 913725866-Jesus Maria / 965793574-Lince) y te ayudamos al toque."
+  ];
+
+  function botSend() {
+    const input = document.getElementById('bot-input');
+    const text = input.value.trim();
+    if (!text) return;
+    addBotMessage(text, 'user');
+    input.value = '';
+    setTimeout(() => {
+      const reply = cannedReplies[Math.floor(Math.random() * cannedReplies.length)];
+      addBotMessage(reply, 'bot');
+    }, 500);
+  }
+
+  addBotMessage("¡Hola! Dale una pausa a tu día ☕ ¿En qué te ayudamos?", 'bot');
 </script>
 
 </body>
