@@ -482,6 +482,10 @@
 </div>
 
 <script>
+  const WORKER_URL = "https://cafetobot1.fnishio.workers.dev";
+
+  let conversation = [];
+
   function toggleChat() {
     document.getElementById('bot-widget').classList.toggle('open');
   }
@@ -489,34 +493,92 @@
   function addBotMessage(text, cls) {
     const box = document.getElementById('bot-messages');
     const div = document.createElement('div');
+
     div.className = 'bot-msg ' + cls;
     div.textContent = text;
+
     box.appendChild(div);
     box.scrollTop = box.scrollHeight;
   }
 
-  // Placeholder — reemplazar por la lógica/API real del bot
-  const cannedReplies = [
-    "¡Hola! Tenemos cafés, smoothies, frappés, sánguches y postres. ¿Qué antojo buscas hoy?",
-    "Puedes ver nuestra carta en nuestra seccion de antojos",
-    "Atendemos de Lunes a Domingo de 10 am a 8 pm",
-    "Puedes visitarnos en Lince (Av. Petit Thouars 1291), Jesús María (Av. Mello Franco 171) o el Centro de Lima (Av. Arenales 425).",
-    "Para pedidos, escríbenos por WhatsApp (751-8119 y 913725866-Jesus Maria / 965793574-Lince) y te ayudamos al toque."
-  ];
-
-  function botSend() {
+  async function botSend() {
     const input = document.getElementById('bot-input');
     const text = input.value.trim();
+
     if (!text) return;
+
     addBotMessage(text, 'user');
     input.value = '';
-    setTimeout(() => {
-      const reply = cannedReplies[Math.floor(Math.random() * cannedReplies.length)];
-      addBotMessage(reply, 'bot');
-    }, 500);
+
+    conversation.push({
+      role: "user",
+      content: text
+    });
+
+    try {
+      const response = await fetch(WORKER_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          messages: conversation
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.reply || "Error del Worker");
+      }
+
+      if (data.reply) {
+        addBotMessage(data.reply, 'bot');
+
+        conversation.push({
+          role: "assistant",
+          content: data.reply
+        });
+      }
+
+      // Si el Worker detecta un lead caliente,
+      // mostramos el botón de WhatsApp.
+      if (data.isHotLead) {
+        addWhatsAppButton();
+      }
+
+    } catch (error) {
+      console.error("Error del chatbot:", error);
+
+      addBotMessage(
+        "Disculpa, hubo un problema al conectarnos. Escríbenos por WhatsApp y te ayudamos al toque.",
+        "bot"
+      );
+    }
   }
 
-  addBotMessage("¡Hola! Dale una pausa a tu día ☕ ¿En qué te ayudamos?", 'bot');
+  function addWhatsAppButton() {
+    const box = document.getElementById('bot-messages');
+
+    // Evitar duplicar el botón
+    if (document.getElementById('bot-whatsapp-cta')) return;
+
+    const link = document.createElement('a');
+
+    link.id = 'bot-whatsapp-cta';
+    link.href = 'https://wa.me/51965793574';
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.textContent = '💬 Escríbenos por WhatsApp';
+
+    box.appendChild(link);
+    box.scrollTop = box.scrollHeight;
+  }
+
+  addBotMessage(
+    "¡Hola! Dale una pausa a tu día ☕ ¿En qué te ayudamos?",
+    'bot'
+  );
 </script>
 
 </body>
